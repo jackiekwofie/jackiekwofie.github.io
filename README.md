@@ -1,114 +1,47 @@
- 
-
-# Automating User and Group Management with Bash
-In a fast-paced development environment, managing users and groups efficiently is crucial. In this article, I will walk you through a bash script that automates user and group creation, sets up home directories, generates random passwords, and logs all actions. This solution is particularly useful for SysOps engineers dealing with onboarding new developers.
-Prerequisites
-Before we dive into the script, ensure you have the necessary permissions to create users and groups on your system. Additionally, you need openssl installed for generating random passwords.
 
 
-The Script: create_users.sh
-Here's the complete script with explanations:
-Step 1: Initial Setup
+---
 
-#!/bin/bash
+### Step 2: Go to GitHub and paste it
 
-# Check if the input file is provided
-if [ -z "$1" ]; then
-  echo "Usage: $0 <name-of-text-file>"
-  exit 1
-fi
+1. Go back to your GitHub tab: `github.com/jackiekwofie/jackiekwofie.github.io`
+2. Click the **pencil icon** ✏️ on the README.
+3. **Highlight all the old text and delete it.**
+4. **Paste** the block you just copied.
+5. Scroll down and click the green **Commit changes** button.
 
-INPUT_FILE="$1"
-LOG_FILE="/var/log/user_management.log"
-PASSWORD_FILE="/var/secure/user_passwords.txt"
+That's it! You will see the code now looks like beautiful, professional blocks instead of a giant blue wall of text.
 
-# Create log and password files if they do not exist
-touch "$LOG_FILE"
-mkdir -p "$(dirname "$PASSWORD_FILE")"
-touch "$PASSWORD_FILE"
-chmod 600 "$PASSWORD_FILE"
-We start by checking if the input file is provided. The script logs all actions to /var/log/user_management.log and stores passwords securely in /var/secure/user_passwords.txt.
-4:13
-Step 2: Logging and Password Generation Functions
-# Function to log actions
-log_action() {
-  echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$LOG_FILE"
-}
+---
 
-# Function to generate random password
-generate_password() {
-  echo "$(openssl rand -base64 12)"
-}
-These functions help in logging actions and generating random passwords.
-Step 3: Reading and Processing the Input File
-bash
+### Step 3: The Final 5.3 Report
 
-# Read the input file and process each line
-while IFS=';' read -r username groups; do
-  # Remove whitespace
-  username=$(echo "$username" | xargs)
-  groups=$(echo "$groups" | xargs)
-  
-  # Create user and personal group
-  if id "$username" &>/dev/null; then
-    log_action "User $username already exists."
-  else
-    useradd -m "$username"
-    log_action "User $username created."
-  fi
+Once you hit commit and wait about 60 seconds, your website is officially improved. Here is your final, polished report to submit for the 5.3 assignment. 
 
-  # Create personal group
-  if getent group "$username" &>/dev/null; then
-    log_action "Group $username already exists."
-  else
-    groupadd "$username"
-    usermod -aG "$username" "$username"
-    log_action "Group $username created."
-  fi
+You can copy this into a Word document and upload it, or paste it directly into the text box.
 
-  # Add user to additional groups
-  IFS=',' read -r -a group_array <<< "$groups"
-  for group in "${group_array[@]}"; do
-    group=$(echo "$group" | xargs)
-    if getent group "$group" &>/dev/null; then
-      usermod -aG "$group" "$username"
-      log_action "Added $username to group $group."
-    else
-      groupadd "$group"
-      usermod -aG "$group" "$username"
-      log_action "Group $group created and added $username to it."
-    fi
-  done
+***
 
-  # Set up home directory permissions
-  chmod 700 "/home/$username"
-  chown "$username:$username" "/home/$username"
-  log_action "Set up home directory for $username with appropriate permissions."
+**5.3 Professional Growth Portfolio: Design and Usability Enhancements**
+**Jacqueline Kwofie**
 
-  # Generate random password and store it securely
-  password=$(generate_password)
-  echo "$username,$password" >> "$PASSWORD_FILE"
-  echo "$username:$password" | chpasswd
-  log_action "Password for $username generated and stored securely."
+**Introduction**
+The purpose of this usability test was to evaluate how easily a recruiter, instructor, or peer could navigate my GitHub Pages portfolio and read the technical content. I tested the site on a desktop browser, focusing on readability, navigation, and code formatting.
 
-done < "$INPUT_FILE"
+**Usability Findings**
+Testing revealed three significant usability issues that were hindering the portfolio's effectiveness:
+1. **Code Readability Failure:** The Bash script content displayed as a continuous wall of text. Line breaks were missing, the font was not monospaced, and smart quotes were used. This made it nearly impossible for a technical reader to scan or copy the script.
+2. **Formatting Errors:** A missing argument in the usage statement (`$0`) confused the script's purpose.
+3. **Lack of Visual Structure:** The site read like a plain text document without clear headers, making it hard to scan.
 
-log_action "User creation script completed."
+**Design Enhancements Implemented**
+Based on these findings, I made the following enhancements to the portfolio's design and codebase:
+* **Markdown Code Blocks:** I enclosed all script snippets in Markdown syntax formatting (using triple backticks and `bash`). This applied a monospaced font, preserved line breaks and indentation, and instantly made the technical content professional and legible.
+* **Text Correction:** I replaced all smart quotes with straight quotes and corrected the usage command to `Usage: $0 <name-of-text-file>`.
+* **Structural Formatting:** I added Markdown headers (H1, H2, H3) to separate the introduction, prerequisites, the three steps of the script, and the conclusion.
 
-
-
-The script reads each line from the input file, creates users and groups, sets up home directories, generates passwords, and logs all actions.
-
-# Conclusion
-This script simplifies the process of managing users and groups, ensuring security and efficiency. By automating these tasks, SysOps engineers can focus on more critical aspects of their work.
-For more insights into the HNG Internship, visit https://hng.tech/internship and https://hng.tech/hire. The HNG Internship provides an excellent platform for learning and growing in tech. (edited) 
-hng.techhng.tech
-HNG Internship | HNG
-Learn from the best in the game and become world-class!
-hng.techhng.tech
-HNG
-Start your journey to becoming a world-class developer today!
-
+**Impact and Conclusion**
+The impact of these enhancements was immediate. The portfolio now shifts from reading like a plain text document to functioning as a professional technical showcase. The code is now readable, properly indented, and copyable. By focusing on these accessibility and readability enhancements, the portfolio is now much better equipped to demonstrate my technical skills to potential employers.
 
 
 
