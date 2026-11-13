@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jacqueline Kwofie | DevOps and Cloud Engineer Portfolio</title>
+<meta name="description" content="Portfolio of Jacqueline Kwofie, an aspiring DevOps and cloud engineer: projects with Docker, AWS and Terraform, résumé, and how faith shapes her work.">
+<style>
+:root{
+  --bg:#f6f7f4; --surface:#ffffff; --ink:#16262e; --muted:#46555c;
+  --line:#d5dbd6; --accent:#0f5c6e; --accent-ink:#ffffff; --mark:#b5761a;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0f1a1f; --surface:#16252c; --ink:#e8eeea; --muted:#b0bdc0;
+    --line:#2c3e46; --accent:#6cc4d6; --accent-ink:#0f1a1f; --mark:#e0a850;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:1.0625rem/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;font-weight:700}
+a{color:var(--accent)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--mark);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--accent);color:var(--accent-ink);padding:.6rem 1rem;z-index:20}
+.skip:focus{left:0}
+header.site{position:sticky;top:0;z-index:10;background:var(--surface);border-bottom:1px solid var(--line)}
+.bar{max-width:62rem;margin:0 auto;padding:.5rem 1rem;display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;align-items:center}
+.brand{font:700 1.15rem Georgia,serif;color:var(--ink);text-decoration:none;margin-right:auto}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.1rem .9rem}
+nav a{display:inline-block;padding:.45rem .1rem;color:var(--ink);text-decoration:none;border-bottom:2px solid transparent}
+nav a:hover{border-bottom-color:var(--accent)}
+main{max-width:62rem;margin:0 auto;padding:0 1rem 3rem}
+section{padding:3rem 0 1rem;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+.prose{max-width:42rem}
+h1{font-size:clamp(2rem,5.5vw,3.25rem);margin:0 0 1rem}
+h2{font-size:clamp(1.5rem,3.5vw,2rem);margin:0 0 1rem}
+h3{font-size:1.2rem;margin:1.5rem 0 .4rem}
+.hero{padding-top:3.5rem}
+.hero .lead{font-size:1.25rem;max-width:40rem}
+.hero .role{color:var(--muted);margin:0 0 .5rem}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:6px;border:2px solid var(--accent);
+  background:var(--accent);color:var(--accent-ink);font-weight:600;text-decoration:none}
+.btn.alt{background:transparent;color:var(--accent)}
+.btn:hover{filter:brightness(1.1)}
+.project{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--mark);
+  border-radius:4px;padding:1rem 1.25rem;margin:1.25rem 0;max-width:46rem}
+.project h3{margin-top:0}
+.tools{color:var(--muted);font-size:.95rem;margin:0 0 .6rem}
+details{margin-top:.6rem}
+summary{cursor:pointer;font-weight:600;color:var(--accent)}
+.tablewrap{overflow-x:auto;max-width:100%}
+table{border-collapse:collapse;min-width:34rem;width:100%;background:var(--surface)}
+th,td{text-align:left;padding:.65rem .8rem;border:1px solid var(--line);vertical-align:top}
+th{background:var(--bg)}
+ul.plain{padding-left:1.2rem;max-width:44rem}
+dl{max-width:44rem}dt{font-weight:700;margin-top:1rem}dd{margin:0}
+footer{max-width:62rem;margin:0 auto;padding:1.5rem 1rem 3rem;color:var(--muted);font-size:.95rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site">
+  <div class="bar">
+    <a class="brand" href="#home">Jacqueline Kwofie</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#faith">Faith and technology</a></li>
+        <li><a href="#contact">Résumé and contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section id="home" class="hero">
+  <p class="role">Aspiring DevOps and cloud engineer</p>
+  <h1>I build systems people can depend on when something goes wrong.</h1>
+  <p class="lead">I run an import business, lead a charity project, and I am training in Docker, AWS and Terraform. This site shows my projects and how I work.</p>
+  <div class="btns">
+    <a class="btn" href="#projects">See my projects</a>
+    <a class="btn alt" href="#contact">Résumé and contact</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About me</h2>
+  <div class="prose">
+    <p>The first thing I learned about reliability had nothing to do with servers. A bank transfer from Ghana to Europe ran late, and a shipment for my business, Blisstrade, sat at the port while demurrage charges grew each day. I worked with my bank and my agent, and I asked the shipping line to release the cargo before the money had cleared. They agreed because years of honest dealing had earned their trust. I collected the goods on time and paid no demurrage.</p>
+    <p>That is the kind of engineer I want to be: someone who finds the problem, talks to the right people and follows through. In 2024 I finished a seven-month DevOps bootcamp with JOMACS International. I am now studying for a bachelor’s degree in Information Technology at BYU-Pathway Worldwide. I live and work between Ghana and Italy.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <p class="prose">Each project lists what I did, what was hard, and what it taught me.</p>
+
+  <article class="project">
+    <h3>Deploying an application with Docker Compose</h3>
+    <p class="tools">Docker, Docker Compose, Linux, YAML, networking</p>
+    <p>I packaged an application and its supporting services into containers so they run the same way every time. I set up the Compose file with services, ports, environment settings and volumes, and worked through the errors until everything ran.</p>
+    <details>
+      <summary>What was hard and what I learned</summary>
+      <p>A small mistake in a configuration file can stop a whole application, and the cause is rarely where the error first appears. I learned to check one service at a time, read the logs first, and confirm how services connect before changing anything. Changing several things at once makes it impossible to know what helped.</p>
+    </details>
+  </article>
+
+  <article class="project">
+    <h3>AWS infrastructure with Terraform (team project)</h3>
+    <p class="tools">AWS, Terraform, Linux, cloud networking</p>
+    <p>Our team built the AWS setup for an application, all defined as code: a VPC, public and private subnets, EC2 instances, security groups, an Application Load Balancer, Amazon RDS and Route 53. I helped build and configure it in Terraform and worked out how each piece connects.</p>
+    <details>
+      <summary>What was hard and what I learned</summary>
+      <p>Network settings, security rules, database access and DNS all have to be right at the same time. When something failed, we traced the connections and reviewed the Terraform plan before applying any change. Working in a team taught me to ask questions early and listen, and the plan step taught me to know what a change will do before I make it.</p>
+    </details>
+  </article>
+
+  <article class="project">
+    <h3>Reverse proxy and database setup</h3>
+    <p class="tools">Nginx Proxy Manager, Docker Compose, PostgreSQL, Linux</p>
+    <p>I put Nginx Proxy Manager in front of an application and a PostgreSQL database so web requests reach the app and the app reaches its data. I configured the proxy, connected the services and fixed the configuration problems along the way.</p>
+    <details>
+      <summary>What was hard and what I learned</summary>
+      <p>Ports, hostnames, network settings and database details all have to line up. When a connection failed, any of the three could be the cause, so I learned to test each link in the chain one at a time.</p>
+    </details>
+  </article>
+
+  <article class="project">
+    <h3>A delayed shipment at Blisstrade (business case study)</h3>
+    <p class="tools">Negotiation, communication with banks, agents and shipping lines</p>
+    <p>A late international bank transfer put a shipment at risk of demurrage charges. I worked with my bank and agent to speed up the payment and asked the shipping line for a telex release before the funds cleared. The cargo arrived on time and I paid no demurrage. I now start international payments earlier and leave room for banking delays.</p>
+  </article>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <dl>
+    <dt>Used in my projects</dt>
+    <dd>AWS (EC2, VPC, subnets, security groups, Application Load Balancer, RDS, Route 53), Docker, Docker Compose, Terraform, Linux (Ubuntu), Nginx Proxy Manager, PostgreSQL, YAML, Git, Bash</dd>
+    <dt>Also covered in my training</dt>
+    <dd>Kubernetes, Jenkins, GitHub Actions, Prometheus, Grafana, Python, Traefik, HAProxy, RabbitMQ, Celery, FastAPI, Adminer, Nexus, Sonar Scanner, AWS Lightsail</dd>
+    <dt>Working skills</dt>
+    <dd>Clear communication, calm problem-solving, and taking responsibility for results</dd>
+  </dl>
+</section>
+
+<section id="experience">
+  <h2>Experience and education</h2>
+  <h3>Owner, Blisstrade, Ghana (2016 to present)</h3>
+  <ul class="plain">
+    <li>Import toiletries from Europe, about three 40-foot containers a year, for around 30 retailers and 50 wholesalers in Accra, Takoradi and Kumasi</li>
+    <li>Manage orders, supplier payments and shipping with banks, agents and shipping lines</li>
+  </ul>
+  <h3>General Secretary, Wenette Foundation Ghana (volunteer, 2015 to present)</h3>
+  <ul class="plain">
+    <li>Led an initiative to build a home for people experiencing homelessness who live with mental health challenges. The home is complete and residents now live there</li>
+    <li>Support the foundation’s administration, records and coordination of members</li>
+  </ul>
+  <h3>Education</h3>
+  <ul class="plain">
+    <li>Bachelor’s degree in Information Technology, BYU-Pathway Worldwide (in progress)</li>
+    <li>DevOps Engineering Bootcamp, JOMACS International, Canada (2024, seven months)</li>
+    <li>Certificate in Professional Marketing, Customer Experience (Higher Level), with Merit, Chartered Institute of Marketing, UK (2015)</li>
+    <li>HND in Business Marketing, University of Professional Studies, Accra (2012 to 2014)</li>
+    <li>Diploma in Business Studies, Meridian Pre-University College (2011 to 2012)</li>
+  </ul>
+</section>
+
+<section id="faith">
+  <h2>Faith and technology</h2>
+  <p class="prose">My faith shapes how I work: honesty when it is costly, patience when something will not run, and service as the reason for doing any of it. These are the values I carry from my projects into IT.</p>
+  <div class="tablewrap" tabindex="0" role="region" aria-label="Table of values and where they showed up">
+    <table>
+      <caption class="prose" style="text-align:left;padding:.5rem 0;color:var(--muted)">Values, where they showed up, and how I will use them in IT</caption>
+      <thead><tr><th scope="col">Value</th><th scope="col">Where it showed up</th><th scope="col">How I will carry it into IT</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Patience and order (Mosiah 4:27)</th><td>Debugging Docker Compose one step at a time</td><td>Troubleshoot systematically, never in a rush</td></tr>
+        <tr><th scope="row">Humility (James 1:5)</th><td>Learning from my team on AWS and Terraform</td><td>Ask questions early and welcome feedback</td></tr>
+        <tr><th scope="row">Faithfulness in small things (Luke 16:10)</th><td>Checking ports, hostnames and settings</td><td>Pay attention to details that others depend on</td></tr>
+        <tr><th scope="row">Integrity (Proverbs 11:3)</th><td>The Blisstrade shipment</td><td>Document honestly, protect information, own mistakes</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Résumé and contact</h2>
+  <p class="prose">I am looking for an entry-level DevOps or cloud role. The best way to reach me is by email.</p>
+  <div class="btns">
+    <a class="btn" href="mailto:jacquelinekwofie2@gmail.com">Email me</a>
+    <a class="btn alt" href="https://www.linkedin.com/in/jacqueline-kwofie">LinkedIn</a>
+    <a class="btn alt" href="https://github.com/jackiekwofie">GitHub</a>
+  </div>
+  <p class="prose" style="margin-top:1.25rem">Add your résumé file to this repository as <code>resume.pdf</code>, then <a href="resume.pdf">open my résumé (PDF)</a>.</p>
+</section>
+
+</main>
+
+<footer>
+  <p>Jacqueline Kwofie, Ghana and Italy. Built with plain HTML and CSS and hosted on GitHub Pages.</p>
+</footer>
+</body>
+</html>
