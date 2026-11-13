@@ -9,7 +9,7 @@ Before we dive into the script, ensure you have the necessary permissions to cre
 
 ## The Script: create_users.sh
 
-Here's the complete script with explanations:
+Here is the complete script with explanations:
 
 ### Step 1: Initial Setup
 
