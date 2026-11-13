@@ -1,50 +1,42 @@
- # Add user to additional groups
-  IFS=',' read -r -a group_array <<< "$groups"
-  for group in "${group_array[@]}"; do
-    group=$(echo "$group" | xargs)
-    if getent group "$group" &>/dev/null; then
-      usermod -aG "$group" "$username"
-      log_action "Added $username to group $group."
-    else
-      groupadd "$group"
-      usermod -aG "$group" "$username"
-      log_action "Group $group created and added $username to it."
-    fi
-  done
+# Jacqueline Kwofie | Portfolio
 
-  # Set up home directory permissions
-  chmod 700 "/home/$username"
-  chown "$username:$username" "/home/$username"
-  log_action "Set up home directory for $username with appropriate permissions."
+Live site: https://jackiekwofie.github.io
 
-  # Generate random password and store it securely
-  password=$(generate_password)
-  echo "$username,$password" >> "$PASSWORD_FILE"
-  echo "$username:$password" | chpasswd
-  log_action "Password for $username generated and stored securely."
+This is my professional growth portfolio. I am an aspiring DevOps and cloud engineer, and the site shows my projects, skills, experience, and how my faith shapes my work.
 
-done < "$INPUT_FILE"
+## What is on the site
 
-log_action "User creation script completed."
-```
+- **About:** who I am and why reliability matters to me
+- **Projects:** Docker Compose, AWS with Terraform, a reverse proxy with PostgreSQL, and a Blisstrade shipment case study
+- **Skills:** the tools I have used and the ones covered in my training
+- **Experience and education:** Blisstrade, Wenette Foundation Ghana, and my studies
+- **Faith and technology:** the values I carry from my projects into IT
+- **Résumé and contact:** a downloadable résumé and ways to reach me
 
-The script reads each line from the input file, creates users and groups, sets up home directories, generates passwords, and logs all actions.
+## How it is built
 
-## Conclusion
+- Plain HTML and CSS in one file (`index.html`), hosted on GitHub Pages
+- No frameworks or external libraries, so it loads quickly on slow connections
+- Works on phones, tablets, and laptops
 
-This script simplifies the process of managing users and groups, ensuring security and efficiency. By automating these tasks, SysOps engineers can focus on more critical aspects of their work.
+## Accessibility and usability
 
-For more insights into the HNG Internship, visit [https://hng.tech/internship](https://hng.tech/internship) and [https://hng.tech/hire](https://hng.tech/hire). The HNG Internship provides an excellent platform for learning and growing in tech.
+- A "Skip to main content" link for keyboard and screen reader users
+- Clear keyboard focus outlines
+- Readable text size and strong color contrast, with an automatic dark mode
+- Tables scroll sideways on small screens
+- Project details open and close so long entries stay short on a phone
 
+## Files
 
+| File | Purpose |
+| --- | --- |
+| `index.html` | The portfolio website |
+| `resume.pdf` | My résumé |
+| `README.md` | This file |
 
+## Contact
 
-
-
-
-
-
-
-
-
-
+- Email: jacquelinekwofie2@gmail.com
+- LinkedIn: https://www.linkedin.com/in/jacqueline-kwofie
+- GitHub: https://github.com/jackiekwofie
