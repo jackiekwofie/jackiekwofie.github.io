@@ -50,7 +50,7 @@ h3{font-size:1.2rem;margin:1.5rem 0 .4rem}
 .project h3{margin-top:0}
 .tools{color:var(--muted);font-size:.95rem;margin:0 0 .6rem}
 details{margin-top:.6rem}
-summary{cursor:pointer;font-weight:600;color:var(--accent)}
+summary{cursor:pointer;font-weight:600;color:var(--accent);text-decoration:underline}
 .tablewrap{overflow-x:auto;max-width:100%}
 table{border-collapse:collapse;min-width:34rem;width:100%;background:var(--surface)}
 th,td{text-align:left;padding:.65rem .8rem;border:1px solid var(--line);vertical-align:top}
@@ -108,7 +108,7 @@ footer{max-width:62rem;margin:0 auto;padding:1.5rem 1rem 3rem;color:var(--muted)
     <p class="tools">Docker, Docker Compose, Linux, YAML, networking</p>
     <p>I packaged an application and its supporting services into containers so they run the same way every time. I set up the Compose file with services, ports, environment settings and volumes, and worked through the errors until everything ran.</p>
     <details>
-      <summary>What was hard and what I learned</summary>
+      <summary>What was hard and what I learned (click to open)</summary>
       <p>A small mistake in a configuration file can stop a whole application, and the cause is rarely where the error first appears. I learned to check one service at a time, read the logs first, and confirm how services connect before changing anything. Changing several things at once makes it impossible to know what helped.</p>
     </details>
   </article>
@@ -117,8 +117,42 @@ footer{max-width:62rem;margin:0 auto;padding:1.5rem 1rem 3rem;color:var(--muted)
     <h3>AWS infrastructure with Terraform (team project)</h3>
     <p class="tools">AWS, Terraform, Linux, cloud networking</p>
     <p>Our team built the AWS setup for an application, all defined as code: a VPC, public and private subnets, EC2 instances, security groups, an Application Load Balancer, Amazon RDS and Route 53. I helped build and configure it in Terraform and worked out how each piece connects.</p>
+
+    <figure style="margin:1rem 0">
+      <svg viewBox="0 0 720 380" role="img" aria-labelledby="awsT awsD" style="width:100%;height:auto;max-width:46rem">
+        <title id="awsT">Simplified AWS architecture for the team project</title>
+        <desc id="awsD">A visitor reaches Route 53, which sends traffic to an Application Load Balancer in a public subnet inside a VPC. The load balancer sends requests to EC2 instances in the same public subnet. The EC2 instances read and write data in an Amazon RDS database in a private subnet. Security groups control the traffic between each part.</desc>
+        <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)"/></marker></defs>
+        <g style="font:14px system-ui,sans-serif;fill:var(--ink)" text-anchor="middle">
+          <rect x="270" y="30" width="440" height="320" rx="10" style="fill:none;stroke:var(--muted);stroke-width:2" stroke-dasharray="6 4"/>
+          <text x="290" y="54" text-anchor="start" style="font-weight:700">VPC</text>
+          <rect x="290" y="70" width="200" height="260" rx="8" style="fill:var(--surface);stroke:var(--line);stroke-width:2"/>
+          <text x="390" y="92" style="font-weight:700">Public subnet</text>
+          <rect x="515" y="70" width="180" height="260" rx="8" style="fill:var(--surface);stroke:var(--line);stroke-width:2"/>
+          <text x="605" y="92" style="font-weight:700">Private subnet</text>
+          <rect x="20" y="160" width="100" height="60" rx="8" style="fill:var(--surface);stroke:var(--accent);stroke-width:2"/>
+          <text x="70" y="196">Visitor</text>
+          <rect x="145" y="160" width="100" height="60" rx="8" style="fill:var(--surface);stroke:var(--accent);stroke-width:2"/>
+          <text x="195" y="196">Route 53</text>
+          <rect x="310" y="130" width="160" height="56" rx="8" style="fill:var(--bg);stroke:var(--accent);stroke-width:2"/>
+          <text x="390" y="163">Load balancer</text>
+          <rect x="310" y="235" width="160" height="56" rx="8" style="fill:var(--bg);stroke:var(--accent);stroke-width:2"/>
+          <text x="390" y="268">EC2 instances</text>
+          <rect x="530" y="170" width="150" height="70" rx="8" style="fill:var(--bg);stroke:var(--accent);stroke-width:2"/>
+          <text x="605" y="210">RDS database</text>
+          <text x="360" y="352" style="font-size:13px;fill:var(--muted)">Security groups control traffic between parts</text>
+        </g>
+        <g style="stroke:var(--accent);stroke-width:2.5;fill:none">
+          <line x1="120" y1="190" x2="143" y2="190" marker-end="url(#arr)"/>
+          <line x1="245" y1="190" x2="268" y2="160" marker-end="url(#arr)"/>
+          <line x1="390" y1="186" x2="390" y2="233" marker-end="url(#arr)"/>
+          <line x1="470" y1="263" x2="528" y2="220" marker-end="url(#arr)"/>
+        </g>
+      </svg>
+      <figcaption style="color:var(--muted);font-size:.95rem;margin-top:.4rem">Simplified diagram of the AWS setup. A visitor reaches Route 53, which sends traffic to the load balancer. The load balancer passes requests to EC2 instances, which use an RDS database in a private subnet. Security groups control the traffic between each part.</figcaption>
+    </figure>
     <details>
-      <summary>What was hard and what I learned</summary>
+      <summary>What was hard and what I learned (click to open)</summary>
       <p>Network settings, security rules, database access and DNS all have to be right at the same time. When something failed, we traced the connections and reviewed the Terraform plan before applying any change. Working in a team taught me to ask questions early and listen, and the plan step taught me to know what a change will do before I make it.</p>
     </details>
   </article>
@@ -128,7 +162,7 @@ footer{max-width:62rem;margin:0 auto;padding:1.5rem 1rem 3rem;color:var(--muted)
     <p class="tools">Nginx Proxy Manager, Docker Compose, PostgreSQL, Linux</p>
     <p>I put Nginx Proxy Manager in front of an application and a PostgreSQL database so web requests reach the app and the app reaches its data. I configured the proxy, connected the services and fixed the configuration problems along the way.</p>
     <details>
-      <summary>What was hard and what I learned</summary>
+      <summary>What was hard and what I learned (click to open)</summary>
       <p>Ports, hostnames, network settings and database details all have to line up. When a connection failed, any of the three could be the cause, so I learned to test each link in the chain one at a time.</p>
     </details>
   </article>
