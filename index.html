@@ -178,13 +178,12 @@ footer{max-width:62rem;margin:0 auto;padding:1.5rem 1rem 3rem;color:var(--muted)
       <summary>Credit and ethics (click to open)</summary>
       <p>This project started from a public tutorial, and I credit its original authors. It is a learning project and is not connected to Netflix. The movie data comes from the TMDB service, which I use under its terms. Keeping keys and passwords out of public code protects other people’s trust, so I treat it as part of the work.</p>
     </details>
-    <!-- PUBLISH THIS BLOCK ONLY AFTER YOU HAVE REALLY DONE THESE CHANGES. Edit it to match what you did, then delete this line and the comment markers around the block.
     <details>
       <summary>What I refined (click to open)</summary>
-      <p>I found a .env file committed to the repository. I created a new API key, removed the file, and added it to .gitignore. I also added an automated security scan with GitHub Actions that checks for known vulnerabilities and secrets, and I wrote security notes in the README.</p>
-      <p><strong>Faith link:</strong> Proverbs 11:3 says the integrity of the upright guides them. Protecting a secret that other people depend on is a small act of integrity.</p>
+      <p>I added an automated security scan to my fork using GitHub Actions and Trivy. The first scan found 23 high-severity vulnerabilities in five outdated packages: xmldom, brace-expansion, minimatch, the React Router core, and json5. I updated all five, rebuilt the project to make sure it still worked, and ran the scan again. The new scan passed.</p>
+      <p>One update broke the build at first, because the newer router did not match the older React Router in the app. I found the cause in the build error, and fixed it by updating React Router itself instead of forcing the router version. I did not have a server to run the full Jenkins pipeline, so I tested the changes with the scan and a production build.</p>
+      <p><strong>Faith link:</strong> Alma 37:6 teaches that great things come from small and simple things. Updating a few packages is a small act, but it protects the people who use the software.</p>
     </details>
-    -->
   </article>
 
   <article class="project">
