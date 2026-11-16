@@ -7,12 +7,14 @@
 <meta name="description" content="Portfolio of Jacqueline Kwofie, an aspiring DevOps and cloud engineer: projects with Docker, AWS and Terraform, résumé, and how faith shapes her work.">
 <style>
 :root{
-  --bg:#f6f7f4; --surface:#ffffff; --ink:#16262e; --muted:#46555c;
-  --line:#d5dbd6; --accent:#0f5c6e; --accent-ink:#ffffff; --mark:#b5761a;
+  --bg:#fbf8fd; --surface:#ffffff; --ink:#2a1a3a; --muted:#5b4b6b;
+  --line:#e3d6ee; --accent:#5b2a86; --accent-ink:#ffffff; --mark:#d6336c;
+  --tint:#f3eafa; --plum:#a21caf; --green:#7c3aed; --coral:#e83e8c;
 }
 @media (prefers-color-scheme:dark){
-  :root{--bg:#0f1a1f; --surface:#16252c; --ink:#e8eeea; --muted:#b0bdc0;
-    --line:#2c3e46; --accent:#6cc4d6; --accent-ink:#0f1a1f; --mark:#e0a850;}
+  :root{--bg:#1a1026; --surface:#241435; --ink:#f1e8fa; --muted:#c9b8dc;
+    --line:#3a2650; --accent:#c9a0ff; --accent-ink:#1a1026; --mark:#ff8ac0;
+    --tint:#2c1a40; --plum:#f0a6ff; --green:#b794ff; --coral:#ff9ec7;}
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:5rem}
@@ -58,6 +60,32 @@ th{background:var(--bg)}
 ul.plain{padding-left:1.2rem;max-width:44rem}
 dl{max-width:44rem}dt{font-weight:700;margin-top:1rem}dd{margin:0}
 footer{max-width:62rem;margin:0 auto;padding:1.5rem 1rem 3rem;color:var(--muted);font-size:.95rem}
+
+/* Color and polish */
+header.site::before{content:"";display:block;height:6px;background:linear-gradient(90deg,var(--accent),var(--mark),var(--plum),var(--green))}
+section{padding-left:1.25rem;padding-right:1.25rem}
+section:nth-of-type(even){background:var(--tint);border-radius:14px;border-bottom:0;margin-top:1.25rem}
+section:nth-of-type(odd){border-bottom:0}
+.hero{background:linear-gradient(135deg,var(--tint),var(--bg) 70%);border-radius:14px;margin-top:1.25rem;padding-top:3.5rem;padding-bottom:2.5rem}
+h2{position:relative;padding-bottom:.6rem}
+h2::after{content:"";position:absolute;left:0;bottom:0;width:64px;height:5px;border-radius:3px;background:linear-gradient(90deg,var(--mark),var(--plum))}
+h3{color:var(--accent)}
+.role{color:var(--plum)}
+.btn{box-shadow:0 2px 0 rgba(0,0,0,.18)}
+.btn.alt{border-color:var(--plum);color:var(--plum)}
+article.project:nth-of-type(1){border-left-color:var(--accent)}
+article.project:nth-of-type(2){border-left-color:var(--mark)}
+article.project:nth-of-type(3){border-left-color:var(--plum)}
+article.project:nth-of-type(4){border-left-color:var(--green)}
+article.project:nth-of-type(5){border-left-color:var(--coral)}
+.project{box-shadow:0 1px 4px rgba(91,42,134,.14)}
+summary{color:var(--plum)}
+table thead th{background:var(--accent);color:var(--accent-ink)}
+tbody th{background:var(--tint)}
+dt{color:var(--accent)}
+footer{background:var(--accent);color:var(--accent-ink);max-width:none;text-align:center}
+footer p{margin:0}
+nav a:hover{border-bottom-color:var(--mark)}
 </style>
 </head>
 <body>
@@ -72,8 +100,12 @@ footer{max-width:62rem;margin:0 auto;padding:1.5rem 1rem 3rem;color:var(--muted)
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#faith">Faith and technology</a></li>
-        <li><a href="#contact">Résumé and contact</a></li>
+        <li><a href="#spiritual">Spiritual growth</a></li>
+        <li><a href="#faith">Alignment</a></li>
+        <li><a href="#reflection">Reflection</a></li>
+        <li><a href="#refinement">Refinement</a></li>
+        <li><a href="#references">References</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -228,8 +260,28 @@ footer{max-width:62rem;margin:0 auto;padding:1.5rem 1rem 3rem;color:var(--muted)
   </ul>
 </section>
 
+<section id="spiritual">
+  <h2>Spiritual growth</h2>
+  <p class="prose">My Spiritual Progression Portfolio is built on three principles. They guide how I study, work and treat people.</p>
+  <dl>
+    <dt>Faith in Jesus Christ</dt>
+    <dd>I will not always have answers, so I keep moving forward, do my part, and turn to Heavenly Father for guidance.</dd>
+    <dt>Following the example of Jesus Christ</dt>
+    <dd>Knowing His teachings is one thing. Putting them into daily choices takes effort, so I watch my attitude and how I respond to people.</dd>
+    <dt>Love and service to others</dt>
+    <dd>Small acts of kindness and patience make a difference. Following Christ should show in how I treat people, not only in what I say.</dd>
+  </dl>
+  <h3>What shaped my thinking</h3>
+  <ul class="plain">
+    <li>Elder Kelly R. Johnson’s “Enduring Power”: build faith before the hard moment arrives</li>
+    <li>The disciple-leader reading and Spencer W. Kimball’s “Jesus: The Perfect Leader”: following Christ takes practice</li>
+    <li>Mark 12:28–34: love of God and love of neighbor belong together</li>
+    <li>Neill F. Marriott’s “Stand In Truth”: stand by what I believe, even when it is uncomfortable</li>
+  </ul>
+</section>
+
 <section id="faith">
-  <h2>Faith and technology</h2>
+  <h2>Alignment: faith and technology</h2>
   <p class="prose">My faith shapes how I work: honesty when it is costly, patience when something will not run, and service as the reason for doing any of it. These are the values I carry from my projects into IT.</p>
   <div class="tablewrap" tabindex="0" role="region" aria-label="Table of values and where they showed up">
     <table>
@@ -243,17 +295,63 @@ footer{max-width:62rem;margin:0 auto;padding:1.5rem 1rem 3rem;color:var(--muted)
       </tbody>
     </table>
   </div>
+  <h3>My skills and my principles</h3>
+  <div class="tablewrap" tabindex="0" role="region" aria-label="Table of professional skills and spiritual principles">
+    <table>
+      <thead><tr><th scope="col">Professional skill</th><th scope="col">Principle</th><th scope="col">How they connect</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Troubleshooting step by step</th><td>Faith</td><td>I trust that a cause can be found, and I change one thing at a time.</td></tr>
+        <tr><th scope="row">Honest reporting</th><td>Following Christ’s example</td><td>I report failures and limits, as in the shipment case and my project refinement.</td></tr>
+        <tr><th scope="row">Protecting users</th><td>Love and service</td><td>I scan and update software because people I will never meet depend on it.</td></tr>
+        <tr><th scope="row">Working in a team</th><td>Following Christ’s example</td><td>I ask questions early and credit other people’s work.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="reflection">
+  <h2>Reflection and review</h2>
+  <p class="prose">Reflection is how I keep my faith and my work lined up. I look for three warning signs: giving my best energy outside the home and bringing only what is left to my family, putting prayer and scripture off until the day is over, and staying silent about something dishonest just to avoid friction.</p>
+  <p class="prose">When I notice one, I respond. I pray and read each morning, take a pause before I walk into my home, apologize out loud when I fall short, and speak honestly and kindly. At the end of each week I ask: Did I make time for God? Did I speak up when it mattered? Did I test my work before I called it finished?</p>
+  <h3>Portfolio review</h3>
+  <p class="prose">I tested this site with two people, one on a phone and one on a laptop. Both found my résumé, a project, the faith section and my contact details without help. One person did not notice the expandable project sections, so I added an underline and a “click to open” label. Next, I plan to test with someone who uses a screen reader.</p>
+</section>
+
+<section id="refinement">
+  <h2>Project refinement</h2>
+  <p class="prose">I refined the DevSecOps project above by adding an automated security scan to <a href="https://github.com/jackiekwofie/Netflix-Clone">my fork</a>. The first scan found 23 high-severity weaknesses in five outdated packages. I updated them, fixed a build error the update caused, and ran the scan again.</p>
+  <div class="tablewrap" tabindex="0" role="region" aria-label="Before and after table">
+    <table>
+      <thead><tr><th scope="col">Measure</th><th scope="col">Before</th><th scope="col">After</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">High-severity findings</th><td>23</td><td>0 reported</td></tr>
+        <tr><th scope="row">Security scan</th><td>Failed</td><td>Passed</td></tr>
+        <tr><th scope="row">Production build</th><td>Passed</td><td>Passed</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="prose" style="margin-top:1rem">I did not run the full pipeline or deploy to AWS, so this shows that known package weaknesses were fixed, not that the whole app is secure. The project began as an open tutorial and a team project, and I credit both.</p>
+</section>
+
+<section id="references">
+  <h2>References</h2>
+  <ul class="plain">
+    <li>Aqua Security. (n.d.). <i>Trivy documentation</i>. <a href="https://trivy.dev">https://trivy.dev</a></li>
+    <li>OWASP Foundation. (2021). <i>A06:2021 Vulnerable and outdated components</i>. OWASP Top 10. <a href="https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/">https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/</a></li>
+    <li>The Church of Jesus Christ of Latter-day Saints. (2013). <i>The Book of Mormon</i>. Alma 37:6.</li>
+    <li>yormengh. (n.d.). <i>Netflix-Clone</i> [Source code]. GitHub. <a href="https://github.com/yormengh/Netflix-Clone">https://github.com/yormengh/Netflix-Clone</a></li>
+  </ul>
 </section>
 
 <section id="contact">
-  <h2>Résumé and contact</h2>
+  <h2>Contact and résumé</h2>
   <p class="prose">I am looking for an entry-level DevOps or cloud role. The best way to reach me is by email.</p>
   <div class="btns">
     <a class="btn" href="mailto:jacquelinekwofie2@gmail.com">Email me</a>
     <a class="btn alt" href="https://www.linkedin.com/in/jacqueline-kwofie">LinkedIn</a>
     <a class="btn alt" href="https://github.com/jackiekwofie">GitHub</a>
   </div>
-  <p class="prose" style="margin-top:1.25rem">Add your résumé file to this repository as <code>resume.pdf</code>, then <a href="resume.pdf">open my résumé (PDF)</a>.</p>
+  <p class="prose" style="margin-top:1.25rem"><a href="resume.pdf">Download my résumé (PDF)</a></p>
 </section>
 
 </main>
